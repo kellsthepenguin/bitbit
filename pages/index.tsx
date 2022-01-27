@@ -3,7 +3,6 @@ import { faBitcoin } from '@fortawesome/free-brands-svg-icons'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import Coin from '../components/Coin'
 import Header from '../components/Header'
 
 const Home: NextPage = () => {
@@ -16,19 +15,10 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
-
-      <div className='flex overflow-scroll'>
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-        <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
-      </div>
+      <p className='text-5xl font-bold center'>
+        어려운 <p className='inline' style={{ color: '#f6931a' }}>비트코인</p>. <br />
+        <p className='inline text-blue-500'>모의투자</p>로 시작하다.
+      </p>
     </div>
   )
 }

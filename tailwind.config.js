@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -6,5 +8,16 @@ module.exports = {
   theme: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        '.center': {
+          'position': 'absolute',
+          'top': '50%',
+          'left': '50%',
+          'transform': 'translate(-50%, -50%)'
+        }
+      })
+    })
+  ]
 }
