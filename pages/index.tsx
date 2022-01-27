@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <div className='flex overflow-scroll no-scrollbar'>
+      <div className='flex overflow-scroll'>
         <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
         <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
         <Coin name='비트코인(원화)' type='BTC-KRW' icon={<FontAwesomeIcon icon={faBitcoin}/>} />
