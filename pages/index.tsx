@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 
       <Header />
       <p className='text-5xl font-bold center'>
-        어려운 <p className='inline' style={{ color: '#f6931a' }}>비트코인</p>. <br />
+        어려운 <p className='inline' style={{ color: '#f6931a' }}>암호화폐</p>. <br />
         <p className='inline text-blue-500'>모의투자</p>로 시작하다.
       </p>
     </div>
