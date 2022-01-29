@@ -20,8 +20,8 @@ model User {
 
 model Balance {
   ownerId Int
-  krw BigInt @default(0)
-  usd Int @default(0)
+  krw BigInt @default(1000000)
+  usd Int @default(1000)
   coins Json @default("{}")
   idx Int @unique @default(autoincrement())
 }
