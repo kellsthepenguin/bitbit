@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBitcoin } from '@fortawesome/free-brands-svg-icons'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
