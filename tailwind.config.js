@@ -18,6 +18,13 @@ module.exports = {
           'transform': 'translate(-50%, -50%)'
         }
       })
+
+      addUtilities({
+        '.placeholder-right-3::placeholder': {
+          'position': 'relative',
+          'left': '5px'
+        }
+      })
     })
   ]
 }

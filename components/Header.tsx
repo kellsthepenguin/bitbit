@@ -9,7 +9,7 @@ const Header = () => {
       <div className='w-full block flex w-auto'>
         <div>
           <a
-            href='#'
+            href='/login'
             className='inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:text-gray-500'
           >
             Login
