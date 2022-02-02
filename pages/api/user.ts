@@ -47,7 +47,7 @@ async function post(
 
     await prisma.balance.create({
       data: {
-        ownerId: user.idx
+        ownerId: user.id
       }
     })
 
