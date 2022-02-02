@@ -45,7 +45,7 @@ async function post(
       }
     })
 
-    await prisma.balance.create({
+    await prisma.wallet.create({
       data: {
         ownerId: user.id
       }

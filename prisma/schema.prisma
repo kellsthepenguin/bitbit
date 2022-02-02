@@ -18,7 +18,7 @@ model User {
   idx Int @unique @default(autoincrement())
 }
 
-model Balance {
+model Wallet {
   ownerId String
   krw BigInt @default(1000000)
   usd Int @default(1000)
