@@ -19,7 +19,7 @@ model User {
 }
 
 model Balance {
-  ownerId Int
+  ownerId String
   krw BigInt @default(1000000)
   usd Int @default(1000)
   coins Json @default("{}")
