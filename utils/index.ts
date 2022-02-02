@@ -13,7 +13,7 @@ function jwtMiddleware(
   res: NextApiResponse,
   cb: (payload: JwtPayload) => any
 ) {
-  const { token } = req.query
+  const { authorization: token } = req.headers
 
   if (!token) return res.json({ error: 'token is not provided' })
   jwt.verify(token as string, key, (err: VerifyErrors | null, token?: JwtPayload | string) => {
