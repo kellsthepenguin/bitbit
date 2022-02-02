@@ -16,6 +16,7 @@ const Home: NextPage = () => {
       .then(({ token, error }) => {
         if (error) return toast.error('Failed to login. Reason: ' + error)
         toast.success('Success!')
+        localStorage.setItem('token', token)
       })
   }
 
