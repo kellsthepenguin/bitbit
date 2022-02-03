@@ -34,7 +34,7 @@ const Header = () => {
 
   if (result.data.valid) isValid = true
 
-  if (!isValid && !(location.href === '/')) {
+  if (!isValid && !(location.pathname === '/')) {
     location.href = '/'
   }
 
