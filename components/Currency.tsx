@@ -3,14 +3,15 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
 config.autoAddCss = false
 
-interface CoinProps {
+interface CurrencyProps {
   name: string,
-  icon: JSX.Element
+  moneyText: string
+  icon: JSX.Element,
 }
 
-const Coin = (props: CoinProps) => {
+const Currency = (props: CurrencyProps) => {
   return (
-    <div className='px-5 py-3 ml-4 border rounded-lg border-gray-400'>
+    <div className='px-5 py-3 ml-4 border rounded-lg border-gray-400 w-64 overflow-hidden'>
       <div className='text-sm text-gray-500'>
         <div className='col-span-12'>
           {props.icon} <a href='#' className='inline-block rounded-full text-black text-large font-bold'>
@@ -18,10 +19,9 @@ const Coin = (props: CoinProps) => {
           </a>
         </div>
       </div>
-      <div className='font-bold text-lg'>₩44,074,000</div>
-      <span className='text-red-500'>▲ 2.48%</span>
+      <div className='font-bold text-lg'>{props.moneyText}</div>
     </div>
   )
 }
 
-export default Coin
+export default Currency
