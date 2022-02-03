@@ -5,10 +5,8 @@ config.autoAddCss = false
 
 interface CoinProps {
   name: string,
-  icon: JSX.Element,
-  type: string
+  icon: JSX.Element
 }
-
 
 const Coin = (props: CoinProps) => {
   return (
