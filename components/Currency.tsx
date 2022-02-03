@@ -14,7 +14,7 @@ const Currency = (props: CurrencyProps) => {
     <div className='px-5 py-3 border rounded-lg border-gray-400 w-64 overflow-hidden'>
       <div className='text-sm text-gray-500'>
         <div className='col-span-12'>
-          {props.icon} <a href='#' className='inline-block rounded-full text-black text-large font-bold'>
+          {props.icon} <p className='inline-block rounded-full text-black text-large font-bold'>
             {props.name}
           </a>
         </div>
