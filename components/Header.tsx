@@ -34,6 +34,10 @@ const Header = () => {
 
   if (result.data.valid) isValid = true
 
+  if (!isValid && !(location.href === '/')) {
+    location.href = '/'
+  }
+
   return (
     <nav
       className='flex items-center justify-between flex-wrap p-6'
