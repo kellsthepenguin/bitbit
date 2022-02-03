@@ -11,7 +11,7 @@ interface CurrencyProps {
 
 const Currency = (props: CurrencyProps) => {
   return (
-    <div className='px-5 py-3 ml-4 border rounded-lg border-gray-400 w-64 overflow-hidden'>
+    <div className='px-5 py-3 border rounded-lg border-gray-400 w-64 overflow-hidden'>
       <div className='text-sm text-gray-500'>
         <div className='col-span-12'>
           {props.icon} <a href='#' className='inline-block rounded-full text-black text-large font-bold'>
