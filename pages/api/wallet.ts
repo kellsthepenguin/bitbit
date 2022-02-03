@@ -6,7 +6,7 @@ import { prisma } from '../../global'
 
 interface Wallet {
   ownerId?: string
-  krw: bigint
+  krw: number
   usd: number
   coins: any
   idx?: number
