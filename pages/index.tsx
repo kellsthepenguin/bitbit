@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Header />
+      <Header title='Bitbit' />
       <p className='text-xl sm:text-5xl font-bold center'>
         어려운 <span style={{ color: '#f6931a' }}>암호화폐</span>. <br />
         <span className='inline text-blue-500'>모의투자</span>로 시작하다.

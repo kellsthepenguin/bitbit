@@ -14,7 +14,7 @@ function useCheck (token: string) {
   }
 }
 
-const Header = () => {
+const Header = (props: { title: string }) => {
   const [token, setToken] = useState('')
   const result = useCheck(token)
   const { decodedToken } = useJwt(token)
@@ -43,7 +43,7 @@ const Header = () => {
       className='flex items-center justify-between flex-wrap p-6'
     >
       <div className='flex mr-6'>
-        <span className='font-semibold text-3xl text-blue-600'>Bitbit</span>
+        <span className='font-semibold text-3xl text-blue-600'>{props.title}</span>
       </div>
       <div className='w-full block flex w-auto'>
         <div className='text-sm'>
