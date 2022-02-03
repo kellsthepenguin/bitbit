@@ -16,7 +16,7 @@ const Currency = (props: CurrencyProps) => {
         <div className='col-span-12'>
           {props.icon} <p className='inline-block rounded-full text-black text-large font-bold'>
             {props.name}
-          </a>
+          </p>
         </div>
       </div>
       <div className='font-bold text-lg'>{props.moneyText}</div>
