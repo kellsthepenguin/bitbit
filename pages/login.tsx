@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import toast, { Toaster } from 'react-hot-toast'
 
-const Home: NextPage = () => {
+const Login: NextPage = () => {
   function login() {
     const id = (document.getElementById('id') as HTMLInputElement).value
     const pw = (document.getElementById('pw') as HTMLInputElement).value
@@ -59,4 +59,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Login
