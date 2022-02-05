@@ -17,6 +17,7 @@ const Login: NextPage = () => {
         if (error) return toast.error('Failed to login. Reason: ' + error)
         toast.success('Success!')
         localStorage.setItem('token', token)
+        location.href = '/wallet'
       })
   }
 
