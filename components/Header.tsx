@@ -38,6 +38,10 @@ const Header = (props: { title: string }) => {
     location.href = '/'
   }
 
+  if (location.pathname === '/') {
+    location.href = '/wallet'
+  }
+
   return (
     <nav
       className='flex items-center justify-between flex-wrap p-6'

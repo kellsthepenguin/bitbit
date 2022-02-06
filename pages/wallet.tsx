@@ -7,8 +7,50 @@ import { faDollarSign, faWonSign } from '@fortawesome/free-solid-svg-icons'
 import { faBitcoin, faEthereum } from '@fortawesome/free-brands-svg-icons'
 
 import Header from '../components/Header'
+import useSWR from 'swr'
+
+const fetcher = (...args: object[]) => (fetch as any)(...args).then((res: any) => res.json()) // FUCKING TYPE
+
+const icons: {
+  [key: string]: JSX.Element
+} = {
+  'btc': <FontAwesomeIcon icon={faBitcoin} />,
+  'eth': <FontAwesomeIcon icon={faEthereum}/>
+}
+
+interface Wallet {
+  usd: number,
+  krw: number,
+  coins: {
+    [coinName: string]: number
+  }
+}
+
+function useWallet (token: string) {
+  const { data, error } = useSWR(['/api/wallet', { headers: { Authorization: token } }], fetcher)
+
+  return {
+    wallet: data as Wallet,
+    isLoading: !error && !data,
+    isError: error
+  }
+}
 
 const Wallet: NextPage = () => {
+  if (typeof window === 'undefined') return <div></div>
+
+  const token = localStorage.getItem('token')!
+  const { wallet, isLoading, isError } = useWallet(token!)
+
+  if (isLoading) return <div>Loading...</div>
+  if (isError || (wallet as any).error) return <div>An error Occured</div>
+
+  const coinElements: JSX.Element[] = []
+
+  Object.entries(wallet.coins).forEach(([coinName, amount]: [coinName: string, amount: number]) => {
+    coinElements.push(<Currency name={coinName.toUpperCase()} icon={icons[coinName]} moneyText={`${amount.toLocaleString()} ${coinName.toUpperCase()}`} />)
+  })
+
   return (
     <div>
       <Head>
@@ -22,14 +64,13 @@ const Wallet: NextPage = () => {
       <div className='px-6'>
         <p className='font-bold text-3xl'>Fiats</p> <br />
         <div className='flex gap-3 flex-col'>
-          <Currency name='KRW' icon={<FontAwesomeIcon icon={faWonSign}/>} moneyText='₩100,000,000' />
-          <Currency name='USD' icon={<FontAwesomeIcon icon={faDollarSign}/>} moneyText='$10,000' />
+          <Currency name='KRW' icon={<FontAwesomeIcon icon={faWonSign}/>} moneyText={`₩${wallet.krw.toLocaleString()}`} />
+          <Currency name='USD' icon={<FontAwesomeIcon icon={faDollarSign}/>} moneyText={`$${wallet.usd.toLocaleString()}`} />
         </div>
         <br />
         <p className='font-bold text-3xl'>Crypto Currencies</p> <br />
         <div className='flex gap-3 flex-col'>
-          <Currency name='Bitcoin' icon={<FontAwesomeIcon icon={faBitcoin}/>} moneyText='1.201 BTC' />
-          <Currency name='Ethereum' icon={<FontAwesomeIcon icon={faEthereum}/>} moneyText='2.56 ETH' />
+          {coinElements}
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ function jwtMiddleware(
 
   if (!token) return res.json({ error: 'token is not provided' })
   jwt.verify(token as string, key, (err: VerifyErrors | null, token?: JwtPayload | string) => {
-    if (err) return res.json({ error: 'an error occured during checking token' })
+    if (err) return res.json({ error: err })
 
     cb(token as JwtPayload)
   })
