@@ -20,8 +20,8 @@ model User {
 
 model Wallet {
   ownerId String
-  krw Int @default(1000000)
-  usd Int @default(1000)
+  krw Float @default(1000000)
+  usd Float @default(1000)
   coins Json @default("{}")
   idx Int @unique @default(autoincrement())
 }
